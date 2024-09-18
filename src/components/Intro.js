@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
 import Me from '../assets/Images/profile-img.png'
-
+import ParticleComponent from '../subComponents/ParticleComponent'
 
 const Box = styled(motion.div)`
 
@@ -74,26 +74,30 @@ const Intro = () => {
     return (
         <Box
         initial={{height:0}}
-        animate={{height: '55vh'}}
-        transition={{ type: 'spring', duration:2, delay:1 }}
+        animate={{height: '60vh'}}
+        transition={{ type: 'spring', duration:1.25, delay:1.5 }}
         >
             <SubBox>
                 <Text>
-                    <h1>Hi,</h1>
-                    <h3>I'm CodeBucks.</h3>
-                    <h6>I design and Code simple yet beautiful websites.</h6>
+                    <h2>Hi,</h2>
+                    <h2>mr-robot-abhi here, </h2>
+                    <h6>I design and code simple yet powerful applications.</h6>
                 </Text>
             </SubBox>
             <SubBox>
+            
                 <motion.div
                 initial={{opacity:0}}
-        animate={{opacity: 1}}
-        transition={{ duration:1, delay:2 }}
+        animate={{opacity: 2}}
+        transition={{ duration:1.5, delay:2 }}
                 >
                     <img className="pic" src={Me} alt="Profile Pic" />
+                    
                 </motion.div>
             </SubBox>
+        <ParticleComponent theme='light' />
         </Box>
+    
     )
 }
 

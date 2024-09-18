@@ -3,59 +3,59 @@
 export const Work = [
     {
         id:1,
-        name:"Agency Landing Page",
-        description:"It is build on top of the React JS, with styledComponents and GSAP for smooth scrolling animations.",
+        name:"Pokémon Search App",
+        description:"A responsive web application for searching and viewing details of Pokémon, built using Next.js, React, Tailwind CSS, and the PokéAPI.",
         tags:["react","gsap","styledComponents"],
         
-        demo:"https://agency-website-eta.vercel.app/",
-        github:"https://github.com/codebucks27/Agency-website"
+        demo:"https://github.com/mr-robot-abhi/pokemon_search_app",
+        github:"https://github.com/mr-robot-abhi/pokemon_search_app"
     },
     {
         id:2,
-        name:"Job listing website",
-        description:"A Job listing website build in ReactJS. With searching and filtering functionalities.",
+        name:"Amazon - Clone",
+        description:"Amazon Clone that actually works.",
         tags:["react","sass"],
         
-        demo:"http://react-job-listing-website.codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/react-job-listing-website"
+        demo:"https://github.com/mr-robot-abhi/Amazone_Clone_ReactJs-master",
+        github:"https://github.com/mr-robot-abhi/Amazone_Clone_ReactJs-master"
         
     },
     {
         id:3,
-        name:"Dev.to Clone",
-        description:"A clone of Dev.to build using ReactJS. With realtime fetching of articles from dev.to using API.",
+        name:"Simple Weather App",
+        description:"A Weather App giving details of a particular city",
         tags:["react","api","sass"],
         
-        demo:"http://devto-clone-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/devto-clone"
+        demo:"https://github.com/mr-robot-abhi/simple-weather-app",
+        github:"https://github.com/mr-robot-abhi/simple-weather-app"
     },
     {
         id:4,
-        name:"Sidebar Menu",
-        description:"A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
+        name:"Flappy Bird Game",
+        description:"Basic version of the flappy bird game built using react",
         tags:["react","styledComponents","react-router"],
         
-        demo:"https://react-sidebar.vercel.app/",
-        github:"https://github.com/codebucks27/react-sidebar"
+        demo:"https://github.com/mr-robot-abhi/flappy-bird-game",
+        github:"https://github.com/mr-robot-abhi/flappy-bird-game"
        
     },{
         id:5,
-        name:"Todo App(React + Redux)",
-        description:"A todo app build using Redux-toolkit and framer-motion for smooth animations.",
-        tags:["react","redux","framer-motion"],
+        name:"ChatGPT Assistant",
+        description:"It serves as a basic demonstration of utilizing OpenAI's models for text generation, image generation, and speech-to-text functionalities",
+        tags:["react","expo","typescript"],
         
-        demo:"http://react-redux-todo-app-git-main-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/React-Redux-Todo-App"
+        demo:"https://github.com/mr-robot-abhi/ChatGpt-Dall-E-Assistant/tree/main/ChatGPT-Assistant-main",
+        github:"https://github.com/mr-robot-abhi/ChatGpt-Dall-E-Assistant/tree/main/ChatGPT-Assistant-main"
         
     },
     {
         id:6,
         name:"Responsive Navigation Menu",
-        description:"A reponsive navbar menu component in ReactJS with react-router functionalities. Built from scratch.",
+        description:"Generate Random Quotes.",
         tags:["react","react-router","css"],
         
-        demo:"http://react-responsive-navbar-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/React-responsive-navbar"
+        demo:"https://github.com/mr-robot-abhi/random-quote-generator",
+        github:"https://github.com/mr-robot-abhi/random-quote-generator"
         
     },
     

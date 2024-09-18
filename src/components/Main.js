@@ -8,7 +8,7 @@ import SocialIcons from '../subComponents/SocialIcons'
 import { YinYang } from './AllSvgs'
 import Intro from './Intro'
 ;
-
+import ParticleComponent from '../subComponents/ParticleComponent';
 
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
@@ -127,25 +127,29 @@ transition: height 0.5s ease, width 1s ease 0.5s;
 
 
 const Main = () => {
-
+    
+    
     const [click, setClick] = useState(false);
 
     const handleClick = () => setClick(!click);
 
+    
     return (
         <MainContainer>
+        <ParticleComponent theme='light' />
          <DarkDiv   click={click}/>
             <Container>
             <PowerButton />
             <LogoComponent theme={click ? 'dark' :'light'}/>
             <SocialIcons theme={click ? 'dark' :'light'} />
-           
+    
             <Center click={click}>
                 <YinYang  onClick={()=> handleClick()} width={click ? 120 : 200} height={click ? 120 : 200} fill='currentColor' />
-                <span>click here</span>
+                <span></span>
             </Center>
 
-            <Contact target="_blank" href="mailto:codebucks27@gmail.com">
+
+            <Contact target="_blank" href="https://topmate.io/abhishek_math">
                 <motion.h2
                 initial={{
                     y:-200,
@@ -159,7 +163,7 @@ const Main = () => {
                 whileTap={{scale: 0.9}}
                 
                 >
-                    Say hi..
+                    Hire Me...
                 </motion.h2>
             </Contact>
             <BLOG to="/blog">

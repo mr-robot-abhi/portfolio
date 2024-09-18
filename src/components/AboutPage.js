@@ -72,9 +72,9 @@ const AboutPage = () => {
             <img src={astronaut} alt="spaceman" />
         </Spaceman>    
         <Main>
-        I'm a front-end developer located in India. I love to create simple yet beautiful websites with great user experience.
+        I am a passionate and experienced Programmer.I am currently working as a Full-Stack Developer.
 <br /> <br/>
-I'm interested in the whole frontend stack Like trying new things and building great projects. I'm an independent freelancer and blogger. I love to write blogs and read books.
+I am looking to collaborate with other developers. I am currently working on building web and cross-platform mobile applications for clients.
 <br/> <br/>
 I believe everything is an Art when you put your consciousness in it. You can connect with me via social links.
         </Main>

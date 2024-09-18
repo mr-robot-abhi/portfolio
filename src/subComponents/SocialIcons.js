@@ -12,7 +12,7 @@ const Icons = styled.div`
 
   position: fixed;
   bottom: 0;
-  left: 2rem;
+  left: 5rem;
 
   z-index: 3;
 
@@ -39,7 +39,7 @@ const SocialIcons = (props) => {
         <a
           style={{ color: "inherit" }}
           target="_blank"
-          href={"https://github.com/codebucks27"}
+          href={"https://github.com/mr-robot-abhi"}
         >
           <Github
             width={25}
@@ -51,12 +51,12 @@ const SocialIcons = (props) => {
       <motion.div
         initial={{scale:0 }}
         animate={{ scale: [0, 1, 1.5, 1] }}
-        transition={{ type: "spring", duration: 1, delay: 1.2 }}
+        transition={{ type: "spring", duration: 1, delay: 1.25 }}
       >
         <a
           style={{ color: "inherit" }}
           target="_blank"
-          href={"https://twitter.com/code_bucks"}
+          href={"https://x.com/mr_robot_abhi"}
         >
           <Twitter
             width={25}
@@ -68,12 +68,12 @@ const SocialIcons = (props) => {
       <motion.div
         initial={{scale:0 }}
         animate={{ scale: [0, 1, 1.5, 1] }}
-        transition={{ type: "spring", duration: 1, delay: 1.4 }}
+        transition={{ type: "spring", duration: 1, delay: 1.50 }}
       >
         <a
           style={{ color: "inherit" }}
           target="_blank"
-          href={"https://facebook.com/codebucks27"}
+          href={"https://facebook.com/abhishek_ilv"}
         >
           <Facebook
             width={25}
@@ -85,12 +85,12 @@ const SocialIcons = (props) => {
       <motion.div
         initial={{scale:0 }}
         animate={{ scale: [0, 1, 1.5, 1] }}
-        transition={{ type: "spring", duration: 1, delay: 1.6 }}
+        transition={{ type: "spring", duration: 1, delay: 2.0 }}
       >
         <a
           style={{ color: "inherit" }}
           target="_blank"
-          href={"https://youtube.com"}
+          href={"https://www.youtube.com/channel/UCTA6Ix-995cZidZGm4Rqz_g"}
         >
           <YouTube
             width={25}

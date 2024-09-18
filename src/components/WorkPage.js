@@ -12,6 +12,8 @@ import Card from "../subComponents/Card";
 import { YinYang } from "./AllSvgs";
 import BigTitlte from "../subComponents/BigTitlte";
 
+import ParticlesComponent from "../subComponents/ParticleComponent";
+
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
 
@@ -79,7 +81,7 @@ const WorkPage = () => {
         <LogoComponent theme="dark" />
         <SocialIcons theme="dark" />
         <PowerButton />
-
+        <ParticlesComponent/>
         <Main ref={ref} variants={container} initial="hidden" animate="show">
           {Work.map((d) => (
             <Card key={d.id} data={d} />

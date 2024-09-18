@@ -11,7 +11,6 @@ import AnchorComponent from '../subComponents/Anchor'
 import BigTitle from "../subComponents/BigTitlte"
 import { motion } from 'framer-motion'
 
-
 const MainContainer = styled(motion.div)`
 background-image: url(${img});
 background-size: cover;
@@ -67,6 +66,7 @@ const BlogPage = () => {
 
 
     return (
+        
         <MainContainer
         variants={container}
         initial='hidden'
@@ -94,6 +94,7 @@ const BlogPage = () => {
 <BigTitle text="BLOG" top="5rem" left="5rem" />
             </Container>
         </MainContainer>
+        
     )
 }
 
