@@ -84,9 +84,11 @@ const MySkillsPage = () => {
 
   useEffect(() => {
     const code = `
-import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { lightTheme } from './Themes';
+import mr-robot-abhi from 'github';
+import {List of Tech Stack Used} from '2012';
+...
+...
+export full-stack-dev
 `;
     let i = 0;
     const interval = setInterval(() => {
