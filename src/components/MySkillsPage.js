@@ -1,113 +1,251 @@
-import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import React, { useState, useEffect } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme } from './Themes';
-import { Develope } from './AllSvgs';
-
 import LogoComponent from '../subComponents/LogoComponent';
 import SocialIcons from '../subComponents/SocialIcons';
 import PowerButton from '../subComponents/PowerButton';
 import ParticleComponent from '../subComponents/ParticleComponent';
-import BigTitle from '../subComponents/BigTitlte'
+import { motion } from 'framer-motion';
+import { DiReact, DiJavascript, DiCss3, DiHtml5, DiNodejs, DiPython, DiAws } from 'react-icons/di';
+import { SiTypescript, SiRedux, SiFirebase, SiMongodb, SiNextdotjs, SiVuedotjs, SiReact, SiExpo, SiAndroidstudio } from 'react-icons/si';
+import { SiRuby, SiJava, SiPhp, SiRust, SiAngular, SiPostgresql, SiMysql, SiGooglecloud, SiMicrosoftazure } from 'react-icons/si';
 
-const Box = styled.div`
-background-color: ${props => props.theme.body};
-width: 100vw;
-height: 120vh;
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
-`
+const Container = styled.div`
+  background-color: ${props => props.theme.body};
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+`;
 
-const Main = styled.div`
-border: 2px solid ${props => props.theme.text};
-color: ${props => props.theme.text};
-background-color: ${props => props.theme.body};
-padding: 0rem;
-width: 30vw;
-height: 80vh;
-z-index: 3;
-line-height: 1.5;
-cursor: pointer;
+const CodeBlock = styled.div`
+  background-color: #f7f7f7;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 50%;
+  margin: 2rem auto;
+  font-family: monospace;
+  font-size: 1.2rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: auto; /* Adjusted height to auto */
+`;
 
-font-family: 'Ubuntu Mono', monospace;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+const CodeText = styled.span`
+  color: #333;
+  white-space: pre-wrap;
+`;
 
-&:hover {
-    color: ${props => props.theme.body};
-    background-color: ${props => props.theme.text};
-}
-`
+const IconGrid = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensure full width for columns */
+  margin-top: 2rem;
+`;
 
-const Title = styled.h2`
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: calc(1em + 1vw);
+const IconColumn = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem; /* Adjusted padding */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 18%; /* Adjusted width for five columns */
+`;
 
-${Main}:hover & {
-    & > * {
-        fill: ${props => props.theme.body};
-    }
-}
+const IconItem = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 1rem;
+  transition: background 0.3s ease-in-out;
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+`;
 
-& > *:first-child {
-    margin-right: 1rem;
-}
-`
+const IconLink = styled.a`
+  text-decoration: none;
+  color: ${props => props.theme.text};
+  cursor: pointer;
+`;
 
-const Description = styled.div`
-color: ${props => props.theme.text};
-font-size: calc(0.6em + 1vw);
-padding: 0.5rem 0;
-
-${Main}:hover & {
-    color: ${props => props.theme.body};
-}
-
-strong {
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-}
-ul, p {
-    margin-left: 2rem;
-}
-`
+const Icon = styled.div`
+  font-size: 36px;
+  margin-bottom: 0.5rem; /* Adjusted margin */
+`;
 
 const MySkillsPage = () => {
-    return (
-        <ThemeProvider theme={lightTheme}>
-            <Box>
-                <LogoComponent theme='light' />
-                <SocialIcons theme='light' />
-                <PowerButton />
-                <ParticleComponent theme='light' />
-                <Main>
-                    <Title>
-                        <Develope width={40} height={40} /> Full Stack Developer
-                    </Title>
-                    <Description>
-                        I mostly use MERN Stack for my full-stack applications. Thus, I enjoy bringing new ideas to life.
-                    </Description>
-                    <Description>
-                        <strong>Skills</strong>
-                        <p>
-                            React, TypeScript, Python, Html, Css, Js, Redux, Sass, Bootstrap, Tailwind, Firebase etc.
-                        </p>
-                    </Description>
-                    <Description>
-                        <strong>Tools</strong>
-                        <p>
-                            VScode, Github, Codepen etc.
-                        </p>
-                    </Description>
-                </Main>
-                <BigTitle text="SKILLS" top="80%" right="30%" />
-            </Box>
-        </ThemeProvider>
-    )
-}
+  const [codeText, setCodeText] = useState('');
 
-export default MySkillsPage
+  useEffect(() => {
+    const code = `
+import mr-robot-abhi from 'github';
+import {List of Tech Stack Used} from '2012';
+...
+...
+export full-stack-dev
+`;
+    let i = 0;
+    const interval = setInterval(() => {
+      setCodeText(code.substring(0, i));
+      i +=1;
+      if (i > code.length) {
+        clearInterval(interval);
+      }
+    }, 50);
+  }, []);
+
+  return (
+    <ThemeProvider theme={lightTheme}>
+      <Container>
+        <LogoComponent theme='light' />
+        <SocialIcons theme='light' />
+        <PowerButton />
+        <ParticleComponent theme = 'light'/>
+        <CodeBlock>
+          <CodeText>{codeText}</CodeText>
+        </CodeBlock>
+        
+        <IconGrid>
+          <IconColumn>
+            <h2>Languages</h2>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.javascript.com/" target="_blank">
+                <Icon><DiJavascript /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.typescriptlang.org/" target="_blank">
+                <Icon><SiTypescript /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.python.org/" target="_blank">
+                <Icon><DiPython /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.ruby-lang.org/en/" target="_blank">
+                <Icon><SiRuby /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.php.net/" target="_blank">
+                <Icon><SiPhp /></Icon>
+              </IconLink>
+            </IconItem>
+          </IconColumn>
+
+          <IconColumn>
+            <h2>Frameworks</h2>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://reactjs.org/" target="_blank">
+                <Icon><DiReact /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://angular.io/" target="_blank">
+                <Icon><SiAngular /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://vuejs.org/" target="_blank">
+                <Icon><SiVuedotjs /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://nextjs.org/" target="_blank">
+                <Icon><SiNextdotjs /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://redux.js.org/" target="_blank">
+                <Icon><SiRedux /></Icon>
+              </IconLink>
+            </IconItem>
+          </IconColumn>
+
+          <IconColumn>
+            <h2>Databases</h2>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.mongodb.com/" target="_blank">
+                <Icon><SiMongodb /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.postgresql.org/" target="_blank">
+                <Icon><SiPostgresql /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.mysql.com/" target="_blank">
+                <Icon><SiMysql /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://firebase.google.com/" target="_blank">
+                <Icon><SiFirebase /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.microsoft.com/en-us/sql-server/sql-server-2019" target="_blank">
+                <Icon><SiMicrosoftazure /></Icon>
+              </IconLink>
+            </IconItem>
+          </IconColumn>
+
+          <IconColumn>
+            <h2>Cloud</h2>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://aws.amazon.com/" target="_blank">
+                <Icon><DiAws /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://cloud.google.com/" target="_blank">
+                <Icon><SiGooglecloud /></Icon>
+              </IconLink>
+            </IconItem>
+          </IconColumn>
+
+          <IconColumn>
+            <h2>Tools</h2>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://code.visualstudio.com/" target="_blank">
+                <Icon><SiVuedotjs /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://expo.dev/" target="_blank">
+                <Icon><SiExpo /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://developer.android.com/studio" target="_blank">
+                <Icon><SiAndroidstudio /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.w3.org/TR/html52/" target="_blank">
+                <Icon><DiHtml5 /></Icon>
+              </IconLink>
+            </IconItem>
+            <IconItem animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}>
+              <IconLink href="https://www.w3.org/Style/CSS/" target="_blank">
+                <Icon><DiCss3 /></Icon>
+              </IconLink>
+            </IconItem>
+          </IconColumn>
+        </IconGrid>
+      
+      </Container>
+    </ThemeProvider>
+  );
+};
+
+export default MySkillsPage;

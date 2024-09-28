@@ -14,7 +14,7 @@ export const Work = [
         id:2,
         name:"Amazon - Clone",
         description:"Amazon Clone that actually works.",
-        tags:["react","sass"],
+        tags:["react","sass","react-router"],
         
         demo:"https://github.com/mr-robot-abhi/Amazone_Clone_ReactJs-master",
         github:"https://github.com/mr-robot-abhi/Amazone_Clone_ReactJs-master"
@@ -33,7 +33,7 @@ export const Work = [
         id:4,
         name:"Flappy Bird Game",
         description:"Basic version of the flappy bird game built using react",
-        tags:["react","styledComponents","react-router"],
+        tags:["react","styledComponents"],
         
         demo:"https://github.com/mr-robot-abhi/flappy-bird-game",
         github:"https://github.com/mr-robot-abhi/flappy-bird-game"
